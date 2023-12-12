@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body class="relative">
+
+    <div id="overlay" class="hidden fixed w-full h-full top-0 left-0 right-0 bottom-0 bg-black opacity-40 z-10">
+    </div>
+
+    <button id="openModalButton" aria-expanded="false" class="flex justify-center items-center p-3 bg-green-500 border-[1px] border-solid border-black rounded-md m-3 leading-none hover:opacity-60">Open</button>
+
+    <!-- behövde sätta positon: fixed annars fungerade inte z-50 eftersom overlay är positon fixed? -->
+    <!-- 
+      Applying the aria-modal property to the dialog element replaces the technique of using aria-hidden on the background for informing assistive technologies that content outside a dialog is inert.
+     -->
+    <div class="modal h-[300px] w-[300px] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-50 bg-white flex flex-col items-center justify-center" role="dialog" id="accessibleModal" aria-labelledby="accessibleModal_label" aria-describedby="accessibleModal_desc" aria-modal="true" hidden >
+      <h2 tabindex="0" class="text-xl" id="accessibleModal_label">Exempel på modalfönster</h2>
+      <p tabindex="0" class="" id="accessibleModal_desc">Här är lite text i modalfönstret.</p>
+
+      <!-- <button>
+        test
+      </button> -->
+      
+        <button id="closeModalBtn" class="flex justify-center items-center p-3 bg-red-500 border-[1px] border-solid border-black rounded-md m-3 leading-none hover:opacity-60">Stäng</button>
+    </div>
+
+
+    <script type="module" src="/main.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

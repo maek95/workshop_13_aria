@@ -1,0 +1,7 @@
+@import "tailwindcss/base"; 
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.modal[hidden]{ /* when modal has the attribute hidden it will be display: none; */
+  display: none;
+}
